@@ -1,0 +1,8 @@
+<mat-tab-group [disableRipple]="true" #tabGroup animationDuration="0ms">
+    <mat-tab label="BEGINNER" class="active-tab">
+        <tours [tours]="beginnerTours"></tours>
+    </mat-tab>
+    <mat-tab label="ADVANCED">
+        <tours [tours]="advancedTours"></tours>
+    </mat-tab>
+</mat-tab-group>

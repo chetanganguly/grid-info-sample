@@ -1,0 +1,14 @@
+.edit-tour {
+    text-align: center;
+
+    .tour-form {
+        display: flex;
+        flex-direction: column;
+
+        .button-wrapper {
+            .cancel {
+                margin-right: 20px;
+            }
+        }
+    }
+}

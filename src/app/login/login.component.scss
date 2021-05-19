@@ -1,0 +1,42 @@
+
+.login-wrapper {
+
+    background-color: grey;
+    margin: -8px;
+    padding-left: 2%;
+    padding-top: 12%;
+    min-height: 85vh;
+    min-width: 100vw;
+
+  .login {
+    width: 50vw;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 25px auto;
+    border: solid black 1px;
+    background-color: white;
+
+    .heading {
+      color: green;
+      margin: 25px 0px;
+      font-weight: bold;
+      font-size: 34px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 30px;
+
+      .button {
+        width: 90px;
+        border-radius: 20px;
+        background-color: #2ec12e;
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

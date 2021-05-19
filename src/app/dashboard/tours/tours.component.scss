@@ -1,0 +1,13 @@
+.tours {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    padding: 50px;
+
+    .tour-card {
+        width: 250px;
+        margin: 10px 5px;
+        border-radius: 12px;
+        border: solid grey 1px;
+    }
+}

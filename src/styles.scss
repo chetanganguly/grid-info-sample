@@ -1,2 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 
+.mat-form-field-wrapper {
+    width: 100%;
+}
+
+.heading {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+}
+
+.success-alert {
+    color: #00B54A !important;
+    box-shadow: none!important;
+    border: 1px solid #00B54A ;
+    position: relative;
+    background: #D9F6E4 !important;
+    box-shadow: none;
+}
+.mat-snack-bar-container {
+    padding-left: 40px!important;
+    min-width: 230px!important;
+    display: flex!important;
+    text-align: center!important;
+    justify-content: center!important;
+ }
+
+.warning-alert {
+    color: #DD4141 !important;
+    position: relative;
+    border: 1px solid #DD4141;
+    box-shadow: none!important;
+	background: #F8E2E2!important;
+}

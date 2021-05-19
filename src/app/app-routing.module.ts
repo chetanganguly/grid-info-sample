@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {AboutComponent} from "./about/about.component";
-import {CourseComponent} from "./course/course.component";
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './core/RouteGuards/auth-guard';
 
 const routes: Routes = [
     {
         path: "",
-        component: HomeComponent
-
+        redirectTo: "login",
+        pathMatch: "full"
     },
     {
-        path: "about",
-        component: AboutComponent
+        path: "login",
+        component: LoginComponent
     },
     {
-        path: 'courses/:id',
-        component: CourseComponent
+        path: "dashboard",
+        loadChildren: () => import("./dashboard/dashboard.module").then(m => m.DashboardModule),
+        canLoad: [AuthGuard]
     },
     {
         path: "**",
@@ -25,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

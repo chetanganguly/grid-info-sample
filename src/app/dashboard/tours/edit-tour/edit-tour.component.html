@@ -1,0 +1,43 @@
+<div class="edit-tour">
+    <div class="heading">Edit Tour</div>
+<form class="tour-form" [formGroup]="tourForm" fxLayout="column">
+    <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Description</mat-label>
+        <input type="text" matInput formControlName="description"
+               placeholder="Washington" />
+        <mat-error *ngIf="tourForm.get('description').hasError('required')">
+          Description is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          <mat-option *ngFor="let category of categoryList" [value]="category">{{category}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="tourForm.get('category').hasError('required')">
+          Category is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Long Description</mat-label>
+        <textarea
+            style="height: 90px;"
+            name="longDescription"
+            formControlName="longDescription"
+            matInput
+            required
+          ></textarea>
+        <mat-error *ngIf="tourForm.get('longDescription').hasError('required')">
+          Long Description is required.
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-wrapper">
+        <button mat-raised-button class="cancel" (click)="cancel()" > Cancel </button>
+        <button mat-raised-button color="warn" (click)="save()"> Save </button>
+      </div>
+      
+</form>
+</div>
