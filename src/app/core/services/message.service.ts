@@ -10,7 +10,7 @@ export class MessageService {
       verticalPosition: "top",
       horizontalPosition: "center",
       panelClass: ["success-alert"],
-    //   duration: 2000
+      duration: 2000
     });
   } 
 
@@ -19,7 +19,7 @@ export class MessageService {
       verticalPosition: "top",
       horizontalPosition: "center",
       panelClass: ["warning-alert"],
-    //   duration: 6000
+      duration: 6000
     });
   }
 }
