@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { DashboardService } from "../service/dashboard.service";
 import { Tour } from "../core/models/tour.model";
 import { MessageService } from "../core/services/message.service";
@@ -16,7 +16,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private _dashboardService: DashboardService,
     private _route: ActivatedRoute,
-    private _messageService: MessageService
+    private _messageService: MessageService,
+    private _router: Router
   ) {
     if (this._route.snapshot.data) {
       this._route.snapshot.data.tours.payload.map((tour) => {
@@ -47,9 +48,17 @@ export class DashboardComponent implements OnInit {
         });
         this.beginnerTours = beginner;
         this.advancedTours = advanced;
-      },error => {
+      }, error => {
         this._messageService.failureMessage(error);
       });
     });
+  }
+  logout() {
+    this.purgeAuth();
+    this._router.navigateByUrl("/login");
+  }
+  purgeAuth() {
+    //remove local storage 
+    localStorage.removeItem("loggedIn");
   }
 }

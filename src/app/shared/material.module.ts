@@ -10,7 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const modules = [
     MatTabsModule,
@@ -21,7 +21,8 @@ const modules = [
     MatButtonModule,
     MatSelectModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule
 ]
 
 @NgModule({

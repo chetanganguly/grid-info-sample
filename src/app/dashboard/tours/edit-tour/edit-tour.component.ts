@@ -13,10 +13,11 @@ export class EditTourComponent implements OnInit {
 
   public tourForm: FormGroup;
   public categoryList = ["BEGINNER", "ADVANCED"];
+  public titile: string = "";
 
   constructor(
     private _formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public data: {tourId: string},
+    @Inject(MAT_DIALOG_DATA) public data: { tourId: string },
     private _dialogRef: MatDialogRef<EditTourComponent>,
     private _dashboardService: DashboardService,
     private _messageService: MessageService
@@ -30,16 +31,17 @@ export class EditTourComponent implements OnInit {
   createForm() {
     this.tourForm = this._formBuilder.group({
       category: ["", Validators.required],
-    description: ["", Validators.required],
-    id: [null, Validators.required],
-    longDescription: ["", Validators.required ]
+      description: ["", Validators.required],
+      id: [null, Validators.required],
+      longDescription: ["", Validators.required]
     })
   }
 
   getTourDetails() {
     this._dashboardService.getTourDetails(parseInt(this.data.tourId)).subscribe(resp => {
+      this.titile = resp.description;
       this.tourForm.patchValue(resp);
-    },error => {
+    }, error => {
       this._messageService.failureMessage(error);
     })
   }
@@ -53,7 +55,7 @@ export class EditTourComponent implements OnInit {
       this._messageService.successMessage("Tour updated successfully.");
       this._dashboardService.updateToursList.next(true);
       this._dialogRef.close(true);
-    },error => {
+    }, error => {
       this._messageService.failureMessage(error);
     })
   }

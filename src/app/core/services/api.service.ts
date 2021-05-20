@@ -21,19 +21,19 @@ export class ApiService {
 
   put(path: string, body: Object = {}, headers: HttpHeaders = new HttpHeaders()): Observable<any> {
     return this._http
-      .put(`${environment.api_url}${path}`,JSON.stringify(body).replace(/"\+s|\s+"/g,'"'),{headers})
+      .put(`${environment.api_url}${path}`,body,{headers})
       .pipe(catchError(this.formatErrors));
   }
 
   post(path: string, body: Object = {}, headers: HttpHeaders = new HttpHeaders()): Observable<any> {
     return this._http
-      .post(`${environment.api_url}${path}`, JSON.stringify(body).replace(/"\+s|\s+"/g,'"'),{headers})
+      .post(`${environment.api_url}${path}`, body,{headers})
       .pipe(catchError(this.formatErrors));
   }
 
   patch(path: string, body: Object = {}): Observable<any> {
     return this._http
-      .patch(`${environment.api_url}${path}`, JSON.stringify(body).replace(/"\+s|\s+"/g,'"'))
+      .patch(`${environment.api_url}${path}`, body)
       .pipe(catchError(this.formatErrors));
   }
 

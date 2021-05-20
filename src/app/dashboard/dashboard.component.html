@@ -1,3 +1,20 @@
+<mat-toolbar
+  class="app-toolbar no-print mat-toolbar mat-warn mat-elevation-z6 mat-toolbar-multiple-rows"
+  color="warn"
+>
+<mat-toolbar-row>
+<span>ALL TOURS</span>
+<span class="flexExpand"></span>
+<button
+mat-raised-button
+value="Logout"
+(click)="logout()"
+>
+Logout
+<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+</button>
+</mat-toolbar-row>
+</mat-toolbar>
 <mat-tab-group [disableRipple]="true" #tabGroup animationDuration="0ms">
     <mat-tab label="BEGINNER" class="active-tab">
         <tours [tours]="beginnerTours"></tours>

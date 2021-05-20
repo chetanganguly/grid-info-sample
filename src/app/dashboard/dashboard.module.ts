@@ -9,7 +9,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { ViewTourComponent } from './tours/view-tour/view-tour.component';
 import { RouterModule } from "@angular/router";
 import { MaterialModule } from "../shared/material.module";
-
 @NgModule({
   imports: [
     CommonModule,
