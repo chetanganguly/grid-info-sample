@@ -2,11 +2,10 @@
 .login-wrapper {
 
     background-color: grey;
-    margin: -8px;
-    padding-left: 2%;
-    padding-top: 12%;
-    min-height: 85vh;
-    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
   .login {
     width: 50vw;
